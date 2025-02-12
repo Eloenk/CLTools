@@ -1,5 +1,5 @@
 # CLTools
- tools for running crypto node
+ tools for running crypto node on cloud
 
  1. Clone the Repository
 If you haven’t already, clone the repository where the script is stored:
@@ -7,7 +7,7 @@ If you haven’t already, clone the repository where the script is stored:
 ```bash
 git clone https://github.com/Eloenk/CLTools.git
 ```
-cd your-repo
+cd CLTools
 
 2. Make the Script Executable
 Ensure the script has execute permissions:
