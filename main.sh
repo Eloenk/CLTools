@@ -29,7 +29,7 @@ install_dev_tools() {
 install_go() {
     show_banner
     echo "Installing Go..."
-    latest_go=$(curl -s https://go.dev/VERSION?m=text)
+    latest_go=$(curl -s https://go.dev/VERSION?m=text | cut -d' ' -f1)
     wget https://go.dev/dl/${latest_go}.linux-amd64.tar.gz
     sudo rm -rf /usr/local/go
     sudo tar -C /usr/local -xzf ${latest_go}.linux-amd64.tar.gz
@@ -59,6 +59,7 @@ install_node() {
     latest_node=$(curl -sL https://nodejs.org/dist/index.tab | awk '{print $1}' | grep -E '^v[0-9]+' | head -1 | tr -d 'v')
     curl -fsSL https://deb.nodesource.com/setup_${latest_node}.x | sudo -E bash -
     sudo apt-get install -y nodejs
+
 }
 
 # Install everything
