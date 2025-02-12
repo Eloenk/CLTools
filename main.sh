@@ -29,7 +29,7 @@ install_dev_tools() {
 install_go() {
     show_banner
     echo "Installing Go..."
-    latest_go=$(curl -s https://go.dev/VERSION?m=text | cut -d' ' -f1)
+    latest_go=$(curl -s https://go.dev/VERSION?m=text | sed -n '1p')
     wget https://go.dev/dl/${latest_go}.linux-amd64.tar.gz
     sudo rm -rf /usr/local/go
     sudo tar -C /usr/local -xzf ${latest_go}.linux-amd64.tar.gz
