@@ -56,9 +56,9 @@ install_docker() {
 install_node() {
     show_banner
     echo "Installing Node.js..."
-    latest_node=$(curl -sL https://nodejs.org/dist/index.tab | awk '{print $1}' | grep -E '^v[0-9]+' | head -1 | tr -d 'v')
-    curl -fsSL https://deb.nodesource.com/setup_${latest_node}.x | sudo -E bash -
-    sudo apt-get install -y nodejs
+    valu=$(curl -sL https://nodejs.org/dist/index.tab | awk '{print $1}' | grep -Eo '^v[0-9]+' | head -1 | tr -d 'v')
+    curl -o- https://fnm.vercel.app/install | bash
+    fnm install ${valu}
 
 }
 
