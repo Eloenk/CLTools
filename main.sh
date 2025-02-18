@@ -61,6 +61,17 @@ install_node() {
     fnm install ${valu}
 
 }
+install_rust() {
+    if ! command -v rustc >/dev/null 2>&1; then
+    echo "Installing Rust..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    export PATH="$HOME/.cargo/bin:$PATH"
+    source "$HOME/.cargo/env"
+    echo "Rust installed: $(rustc --version)"
+    else
+    echo "Rust is already installed: $(rustc --version)"
+    fi
+}
 
 # Install everything
 install_dev_tools
