@@ -75,6 +75,7 @@ install_rust() {
 
 # Install everything
 install_dev_tools
+install_rust
 install_go
 install_docker
 install_node
