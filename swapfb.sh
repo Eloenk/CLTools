@@ -29,10 +29,12 @@ ramin() {
     swapon --priority 32767 $SWAPFILE
     # Make it persistent
     echo "$SWAPFILE none swap sw 0 0" >> /etc/fstab
-    echo "vm.swappiness=100" >> /etc/sysctl.conf
+    
     echo "Swap file of $SIZE created with highest priority."
+
 
 }
 ramin
 echo "done"
+echo "vm.swappiness=100" >> /etc/sysctl.conf
 
