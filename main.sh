@@ -71,6 +71,10 @@ install_rust() {
     else
     echo "Rust is already installed: $(rustc --version)"
     fi
+    curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v25.2/protoc-25.2-linux-x86_64.zip
+    unzip protoc-25.2-linux-x86_64.zip -d $HOME/.local
+    export PATH="$HOME/.local/bin:$PATH"
+
 }
 
 # Install everything
