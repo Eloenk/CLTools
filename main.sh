@@ -22,7 +22,7 @@ install_dev_tools() {
     show_banner
     echo "Installing Development Tools..."
     sudo apt-get update -y
-    sudo apt-get install -y build-essential git curl wget jq tmux screen libssl-dev unzip pkg-config
+    sudo apt-get install -y build-essential git curl wget jq tmux screen libssl-dev unzip pkg-config protoc protobuf-compiler
 }
 
 # Install Go
